@@ -4,24 +4,38 @@
     <meta charset="UTF-8">
     <title>Sahel's GitHub Page</title>
     <style>
+        @keyframes colors {
+            0% { background-color: #ff6347; }
+            25% { background-color: #1e90ff; }
+            50% { background-color: #3cb371; }
+            75% { background-color: #ffa500; }
+            100% { background-color: #ff6347; }
+        }
+        
         body {
-            background-image: url('gay 1.jpg'); /* Path to your initial background image */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            animation: colors 10s infinite;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            font-size: 200%; /* Increased font size */
         }
+
         .content {
-            background: white;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
             padding: 20px;
             border-radius: 8px;
             text-align: center;
         }
-        input, button {
+
+        input[type="text"], button {
+            font-size: inherit; /* Ensures input and button text is also larger */
             margin-top: 10px;
+            padding: 10px; /* More padding for better visibility */
+        }
+
+        p {
+            margin: 10px 0; /* Adjust spacing as needed */
         }
     </style>
 </head>
@@ -40,8 +54,12 @@
 
             if (userAnswer === "245") {
                 responseElement.innerHTML = "Correct! Zaid still can't bench 225";
-                confetti();
                 document.body.style.backgroundImage = 'url("gay 1.jpg")'; // Same image for celebration
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
             } else {
                 responseElement.innerHTML = "<strong>fuck no!</strong>";
                 document.body.style.backgroundImage = 'url("gay 2.webp")'; // Change to your second image path
