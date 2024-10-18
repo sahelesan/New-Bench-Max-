@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sahel's GitHub Page</title>
+    <style>
+        body {
+            background-image: url('gay 1.jpg'); /* Path to your initial background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        input, button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p>What is Sahel's new bench max?</p>
+        <input type="text" id="answer" placeholder="Enter your answer here">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="response"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.0/dist/confetti.browser.js"></script>
+    <script>
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value;
+            const responseElement = document.getElementById('response');
+
+            if (userAnswer === "245") {
+                responseElement.innerHTML = "Correct! Zaid still can't bench 225";
+                confetti();
+                document.body.style.backgroundImage = 'url("gay 1.jpg")'; // Same image for celebration
+            } else {
+                responseElement.innerHTML = "<strong>fuck no!</strong>";
+                document.body.style.backgroundImage = 'url("gay 2.webp")'; // Change to your second image path
+            }
+        }
+    </script>
+</body>
+</html>
